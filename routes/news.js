@@ -10,3 +10,5 @@ router.use(auth);
 router.get("/", getItems);
 router.post("/", validateCardBody, createItem);
 router.delete("/:itemId", validateId, deleteItem);
+
+module.exports = router;
