@@ -48,7 +48,7 @@ function deleteItem(req, res, next) {
 }
 
 function getItems(req, res, next) {
-  News.find({})
+  News.find({ owner: req.user._id })
     .then((items) => res.status(200).send(items))
     .catch((err) => {
       next(err);
