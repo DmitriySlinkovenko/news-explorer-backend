@@ -36,6 +36,10 @@ const newsSchema = new mongoose.Schema(
       ref: "user",
       required: true,
     },
+    searchTag: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

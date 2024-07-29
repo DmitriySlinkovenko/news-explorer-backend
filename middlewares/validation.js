@@ -29,6 +29,9 @@ module.exports.validateCardBody = celebrate({
     publishedAt: Joi.string().required().messages({
       "string.empty": "Field is required",
     }),
+    searchTag: Joi.string().required().messages({
+      "string.empty": "Field is required",
+    }),
   }),
 });
 

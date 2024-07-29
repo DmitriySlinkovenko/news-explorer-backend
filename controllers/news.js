@@ -4,13 +4,15 @@ const BadRequestError = require("../errors/BadRequestError");
 const NotFoundError = require("../errors/NotFoundError");
 
 const createItem = (req, res, next) => {
-  const { name, description, urlToImage, publishedAt, title } = req.body;
+  const { name, description, urlToImage, publishedAt, title, searchTag } =
+    req.body;
   News.create({
     name,
     description,
     urlToImage,
     publishedAt,
     title,
+    searchTag,
     owner: req.user._id,
   })
     .then((item) => res.status(200).send({ item }))
